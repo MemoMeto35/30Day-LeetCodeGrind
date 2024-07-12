@@ -8,7 +8,10 @@ public:
         for(int i = 0; i< height.size(); i++){
             for(int j = i+1; j < height.size(); j++){
                 int width = j-i; 
-                int area = (j-i)*min(height[i], height[j]);
+
+                int length = min(height[i], height[j]);
+                
+                int area = width*length;
                 maxArea = max(maxArea, area);
             }
         }
