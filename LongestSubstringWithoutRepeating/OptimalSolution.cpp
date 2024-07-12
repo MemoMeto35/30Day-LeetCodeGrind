@@ -1,3 +1,7 @@
+// O(N)
+// O(N)
+// Using the swipping window Technique
+
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
