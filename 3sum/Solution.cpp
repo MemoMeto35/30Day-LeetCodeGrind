@@ -6,7 +6,8 @@ public:
 
         vector<vector<int>> res;
 
-        if(nums.size() <=4 && nums[0]+nums[1]+nums[2]==0) return {{nums[0], nums[1], nums[2]}};
+        if(nums.size() <=4 && nums[0]+nums[1]+nums[2]==0) return {{nums[0], nums[1], nums[2]}}; // just to get the code faster
+        
 
         for(int i = 0; i<nums.size(); i++){
             int j = i+1, k= nums.size()-1;
