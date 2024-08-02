@@ -28,4 +28,16 @@ public:
         }
         return minSwaps;
     }
+    int minSwapsEfficient(vector<int>& nums) {
+        int k = accumulate(nums.begin(), nums.end(), 0); // number of ones in the array;
+        int n = nums.size();
+        int cnt = accumulate(nums.begin(), nums.begin()+k, 0); // number of ones in the first k elements; 
+        int mx = cnt; 
+        for(int i = k; i<n+k; i++){
+            cnt += nums[i%n] - nums[i-k];
+            mx = max(cnt, mx);
+        }
+        return k - mx;
+    }
+};
 };
