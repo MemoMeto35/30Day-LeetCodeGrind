@@ -1,3 +1,5 @@
+// time: O(n log(log(n)));
+// space: O(n);
 class Solution {
 public:
     int countPrimes(int n) {
@@ -10,9 +12,11 @@ public:
             k+= 2;
         }
         arr[2]=1;
-        for(int i = 3; i<n; i++){
-            if(i*i>n) break;
-            for(int j = i*i; j<n; j+=i){
+        for(int i = 3; i<n; i+=2){
+            if(i*i>n) break; // optimization
+            if(arr[i]==0) continue; // optimization
+            int d = 2*i; // optimization
+            for(int j = i*i; j<n; j+=d){
                 if(j%i==0) arr[j] =0;
             }
         }
